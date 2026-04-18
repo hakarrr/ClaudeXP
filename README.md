@@ -151,7 +151,7 @@ Everyone running ClaudeXP lands on the same board. Your row updates every time y
 ──────────────────────────────────────────────────────────────────────
 Rank  Player                Level                     Total XP   Sessions
 ──────────────────────────────────────────────────────────────────────
-#1    Evan ←                7 Pull Request Pro        14,321     47
+#1    dan ←                7 Pull Request Pro        14,321     47
 #2    alice                 5 Feature Builder         6,200      28
 #3    bob                   3 Snippet Slinger         1,820      9
 ```
