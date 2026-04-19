@@ -3,10 +3,16 @@
 #   irm https://raw.githubusercontent.com/EvanPaules/ClaudeXP/main/install.ps1 | iex
 
 $ErrorActionPreference = 'Stop'
-$Repo = if ($env:CLAUDEXP_REPO) { $env:CLAUDEXP_REPO } else { 'EvanPaules/ClaudeXP' }
 
-Write-Host ""
-Write-Host "⚡  Installing ClaudeXP from github:$Repo" -ForegroundColor Cyan
+if ($env:CLAUDEXP_REPO) {
+  $Source = "github:$($env:CLAUDEXP_REPO)"
+  Write-Host ""
+  Write-Host "⚡  Installing ClaudeXP from $Source" -ForegroundColor Cyan
+} else {
+  $Source = 'claudexp'
+  Write-Host ""
+  Write-Host "⚡  Installing ClaudeXP from npm" -ForegroundColor Cyan
+}
 Write-Host ""
 
 if (-not (Get-Command node -ErrorAction SilentlyContinue)) {
@@ -26,7 +32,7 @@ if (-not (Get-Command npm -ErrorAction SilentlyContinue)) {
   exit 1
 }
 
-npm install -g "github:$Repo"
+npm install -g $Source
 if ($LASTEXITCODE -ne 0) {
   Write-Host "npm install failed." -ForegroundColor Red
   exit $LASTEXITCODE

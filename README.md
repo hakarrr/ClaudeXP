@@ -38,37 +38,38 @@ Your totals sync to a shared cloud leaderboard so you can see how you stack up a
 
 ## Install
 
-### Windows (PowerShell)
-
-```powershell
-irm https://raw.githubusercontent.com/EvanPaules/ClaudeXP/main/install.ps1 | iex
-```
-
-### macOS / Linux
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/EvanPaules/ClaudeXP/main/install.sh | bash
-```
-
-That's it. The installer:
-
-1. Checks you have Node 18+.
-2. Runs `npm install -g claudexp`.
-3. Drops the Stop hook into `~/.claude/settings.json` (safe JSON merge — nothing else gets touched).
-4. Claims your username on the community leaderboard.
-5. You're in.
-
-End your next Claude Code session and the overlay pops up.
-
-<details>
-<summary>Prefer the manual route?</summary>
+Requires Node 18+.
 
 ```bash
 npm install -g claudexp
 claudexp setup
 ```
 
-Or clone and link for development:
+`claudexp setup` drops the Stop hook into `~/.claude/settings.json` (safe JSON merge — nothing else gets touched) and claims your username on the community leaderboard.
+
+End your next Claude Code session and the overlay pops up.
+
+<details>
+<summary>Prefer a one-liner installer?</summary>
+
+**Windows (PowerShell)**
+
+```powershell
+irm https://raw.githubusercontent.com/EvanPaules/ClaudeXP/main/install.ps1 | iex
+```
+
+**macOS / Linux**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/EvanPaules/ClaudeXP/main/install.sh | bash
+```
+
+Same end state — these scripts check your Node version, `npm install -g claudexp`, then run `claudexp setup` for you.
+
+</details>
+
+<details>
+<summary>Clone and link for development?</summary>
 
 ```bash
 git clone https://github.com/EvanPaules/ClaudeXP

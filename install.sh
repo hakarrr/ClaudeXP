@@ -5,10 +5,15 @@
 
 set -e
 
-REPO="${CLAUDEXP_REPO:-EvanPaules/ClaudeXP}"
-
-echo
-echo "⚡  Installing ClaudeXP from github:$REPO"
+if [ -n "$CLAUDEXP_REPO" ]; then
+  SOURCE="github:$CLAUDEXP_REPO"
+  echo
+  echo "⚡  Installing ClaudeXP from $SOURCE"
+else
+  SOURCE="claudexp"
+  echo
+  echo "⚡  Installing ClaudeXP from npm"
+fi
 echo
 
 if ! command -v node >/dev/null 2>&1; then
@@ -28,7 +33,7 @@ if ! command -v npm >/dev/null 2>&1; then
   exit 1
 fi
 
-npm install -g "github:$REPO"
+npm install -g "$SOURCE"
 
 echo
 echo "✓  ClaudeXP installed. Running setup..."
