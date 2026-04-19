@@ -2,16 +2,21 @@
 
 **Turn every Claude Code session into XP. Level up, unlock achievements, and climb the global leaderboard.**
 
+[![npm](https://img.shields.io/npm/v/claudexp?color=cb3837&logo=npm)](https://www.npmjs.com/package/claudexp)
+[![downloads](https://img.shields.io/npm/dm/claudexp?color=cb3837)](https://www.npmjs.com/package/claudexp)
+[![stars](https://img.shields.io/github/stars/EvanPaules/ClaudeXP?style=flat&logo=github)](https://github.com/EvanPaules/ClaudeXP/stargazers)
 ![node](https://img.shields.io/badge/node-18%2B-brightgreen)
 ![license](https://img.shields.io/badge/license-MIT-blue)
 ![platform](https://img.shields.io/badge/platform-win%20%7C%20mac%20%7C%20linux-lightgrey)
-![stack](https://img.shields.io/badge/backend-supabase-3ecf8e)
 
 ---
 
 Every time you end a Claude Code session, a Stop hook scores what you actually did — tool uses, files edited, bug fixes, features shipped — and a framed overlay pops up right in your terminal showing the XP you earned.
 
 Your totals sync to a shared cloud leaderboard so you can see how you stack up against everyone else running ClaudeXP. Nobody's watching you work. Nobody asked you to. It just makes closing `/exit` feel like finishing a raid.
+
+<!-- Drop a demo.gif here once recorded: ![demo](docs/demo.gif) -->
+
 
 ```
 ╭──────────────────────────────────────╮
@@ -48,7 +53,7 @@ curl -fsSL https://raw.githubusercontent.com/EvanPaules/ClaudeXP/main/install.sh
 That's it. The installer:
 
 1. Checks you have Node 18+.
-2. Runs `npm install -g github:EvanPaules/ClaudeXP`.
+2. Runs `npm install -g claudexp`.
 3. Drops the Stop hook into `~/.claude/settings.json` (safe JSON merge — nothing else gets touched).
 4. Claims your username on the community leaderboard.
 5. You're in.
@@ -59,7 +64,7 @@ End your next Claude Code session and the overlay pops up.
 <summary>Prefer the manual route?</summary>
 
 ```bash
-npm install -g github:EvanPaules/ClaudeXP
+npm install -g claudexp
 claudexp setup
 ```
 

@@ -1,0 +1,73 @@
+name: Bug report
+description: Something broke — XP didn't land, overlay didn't show, leaderboard out of sync, etc.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. The more specific you can be, the faster this gets fixed.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you expect vs. what you actually saw?
+      placeholder: |
+        Expected: overlay with ~150 XP after a 10-minute feature session.
+        Got: no overlay, `claudexp stats` still shows yesterday's total.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Run `claudexp setup`
+        2. Open Claude Code, do X
+        3. Exit — overlay never prints
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: OS
+      placeholder: "Windows 11 / macOS 14.2 / Ubuntu 22.04"
+    validations:
+      required: true
+  - type: input
+    id: node
+    attributes:
+      label: Node version
+      description: Output of `node --version`
+      placeholder: "v20.11.0"
+    validations:
+      required: true
+  - type: input
+    id: claudexp-version
+    attributes:
+      label: ClaudeXP version
+      description: Output of `claudexp --version` (or the commit SHA if installed from source)
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: textarea
+    id: cloud-status
+    attributes:
+      label: "`claudexp cloud status` output"
+      description: Paste the output. Redact the owner token before submitting.
+      render: shell
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: Anything printed by the hook (stderr), or errors from the CLI. Set `CLAUDEXP_DEBUG=1` for verbose output.
+      render: shell
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Confirmations
+      options:
+        - label: I searched existing issues and didn't find a duplicate
+          required: true
+        - label: I redacted my owner token from any pasted output
+          required: true

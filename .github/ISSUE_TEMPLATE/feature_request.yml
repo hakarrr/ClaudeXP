@@ -1,0 +1,48 @@
+name: Feature request / achievement idea
+description: Propose a new feature, achievement, or scoring signal.
+title: "[idea] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Achievements and scoring tweaks are the most wanted contributions. Ridiculous ideas encouraged.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of idea is this?
+      options:
+        - New achievement / trophy
+        - New XP scoring signal
+        - Level curve / title change
+        - CLI command or flag
+        - Leaderboard feature
+        - Integration (Discord, Twitter, GitHub README badge, etc.)
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: pitch
+    attributes:
+      label: The pitch
+      description: One or two sentences — what's the idea?
+      placeholder: "Achievement: 🦉 Night Owl — 5 sessions that started between midnight and 4am."
+    validations:
+      required: true
+  - type: textarea
+    id: trigger
+    attributes:
+      label: How would it be detected?
+      description: For achievements/scoring — what signal from the transcript or session would trigger it? Keep the hook budget (~1s) in mind.
+      placeholder: "Check session start timestamp against local time zone in hook.js."
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Optional. Anything you thought of but rejected?
+  - type: checkboxes
+    id: willing
+    attributes:
+      label: Are you open to sending a PR?
+      options:
+        - label: I'd be up for implementing this myself
